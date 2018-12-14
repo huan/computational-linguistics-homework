@@ -57,14 +57,14 @@ code:
 	# vscode need to know where the modules are by setting PYTHONPATH
 	PYTHONPATH=. code .
 
-.PHONY: train
-train:
-	PYTHONPATH=. python3 bin/train.py
-
 .PHONY: preprocess
 preprocess:
 	PYTHONPATH=. python3 bin/preprocess.py > data/corpus_preprocessed.txt
 
-.PHONY: chat
-chat:
-	PYTHONPATH=. python3 bin/chat.py
+.PHONY: train
+train:
+	PYTHONPATH=. python3 bin/train.py
+
+.PHONY: inference
+inference:
+	PYTHONPATH=. python3 bin/inference.py

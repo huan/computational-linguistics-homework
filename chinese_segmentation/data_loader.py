@@ -43,3 +43,18 @@ def load_data ():
         y = np.append(y, tag, axis=0)
 
     return X, y
+
+
+def load_test_data ():
+    '''doc'''
+    with open('data/bigram_test.txt', 'r') as f:
+        line_list = f.readlines()
+
+    X = []
+
+    for line in line_list:
+        line = line.strip()
+        for text in line.split('。'):
+            X.append(list(text))
+
+    return X

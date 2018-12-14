@@ -12,14 +12,14 @@ def build_model (
     model.add(
         tf.keras.layers.Embedding(
             input_dim=voc_size,
-            output_dim=256,
+            output_dim=64,
             input_length=MAX_LEN,
         )
     )
     model.add(
         tf.keras.layers.Bidirectional(
             tf.keras.layers.LSTM(
-                units=128,
+                units=64,
                 # activation='sigmoid',
                 # inner_activation='hard_sigmoid',
                 return_sequences=True,
