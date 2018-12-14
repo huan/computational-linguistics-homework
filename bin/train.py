@@ -34,7 +34,7 @@ def main () -> int:
 
     model.summary()
 
-    model.fit(X, y, batch_size=128, epochs=5)
+    model.fit(X, y, batch_size=128, epochs=2)
     model.save_weights(CHECKPOINT_FILE)
 
     # predicted = model.predict(X[0:3])

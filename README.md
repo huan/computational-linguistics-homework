@@ -1,5 +1,12 @@
 # computational-linguistics-homework
 
+This is a homework.
+
+## REQUIREMENT
+
+1. Tensorflow 1.12 or above
+2. Python 3.5 or above
+
 ## HOW TO RUN
 
 ### 1 Clone
@@ -39,6 +46,10 @@ PYTHONPATH=. python3 bin/preprocess.py > data/corpus_preprocessed.txt
 
 ### 4 Train
 
+Loss will descrease from 0.6 to 0.08 after 2 epochs.
+
+If you increase the epochs from 2 to 5, the loss will be able to decrease from 0.08 to around 0.05
+
 ```sh
 $ make train
 PYTHONPATH=. python3 bin/train.py
@@ -69,8 +80,7 @@ Epoch 2/2
 ```sh
 $  make inference
 PYTHONPATH=. python3 bin/inference.py
-2018-12-15 02:13:58.718593: I tensorflow/core/platform/cpu_feature_guard.cc:141] Your CPU supports instructions that this TensorFlow binary was not compiled to use: AVX2 FMA
- 本报 讯 春节 临近 ， 全国 各地 积极 开展 走访 慰问 困难 企业 和 特困 职工 的 送 温暖 活动 ，...
+本报 讯 春节 临近 ， 全国 各地 积极 开展 走访 慰问 困难 企业 和 特困 职工 的 送 温暖 活动 ，...
 ```
 
 ## AUTHOR
