@@ -48,7 +48,7 @@ install:
 
 .PHONY: pytest
 pytest:
-	PYTHONPATH=. pytest chit_chat/ tests/
+	PYTHONPATH=. pytest src/ tests/
 
 .PHONY: test
 test: pytest
@@ -63,7 +63,7 @@ train:
 
 .PHONY: preprocess
 preprocess:
-	python3 src/preprocess.py > data/corpus_preprocessed.txt
+	PYTHONPATH=. python3 bin/preprocess.py > data/corpus_preprocessed.txt
 
 .PHONY: chat
 chat:
