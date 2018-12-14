@@ -23,24 +23,25 @@ def load_data ():
         line_list = f.readlines()
 
     X = []
-    y = np.array([]).reshape(0, MAX_LEN, 1)
+    y = np.zeros((
+        len(line_list),
+        MAX_LEN,
+        1,
+    ))
 
-    for line in line_list:
-        text, tag = re.split(r'\t', line)
+    # import pdb; pdb.set_trace()
 
-        text = re.sub(r'\s*', '', text).strip()
-        tag = re.sub(r'\s*', '', tag).strip()
-        tag = tag + ( '0' * ( MAX_LEN - len(tag) ) )
+    for i, line in enumerate(line_list):
 
-        # import pdb; pdb.set_trace()
+        # if i % 100 == 0:
+        #     print ('loading data ... {}'.format(i))
 
-        tag = np.array([
-            float(char)
-            for char in tag
-        ]).reshape(1, MAX_LEN, 1)
+        text, tag = re.split(r'\t', line.strip())
 
         X.append(list(text))
-        y = np.append(y, tag, axis=0)
+
+        for bi_idx, bi_char in enumerate(tag):
+            y[i, bi_idx, 0] = float(bi_char)
 
     return X, y
 

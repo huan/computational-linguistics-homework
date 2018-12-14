@@ -8,7 +8,8 @@ all : clean lint
 
 .PHONY: clean
 clean:
-	echo "TODO: clean what?"
+	rm -fr data/checkpoints
+	rm -f data/corpus_preprocessed.txt
 
 .PHONY: lint
 lint: pylint pycodestyle flake8 mypy
