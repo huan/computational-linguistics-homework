@@ -20,18 +20,16 @@ def build_model (
         tf.keras.layers.Bidirectional(
             tf.keras.layers.LSTM(
                 units=64,
-                # activation='sigmoid',
-                # inner_activation='hard_sigmoid',
                 return_sequences=True,
             )
         )
     )
-    model.add(tf.keras.layers.Dropout(0.2))
+    model.add(tf.keras.layers.Dropout(0.5))
     model.add(
         tf.keras.layers.TimeDistributed(
             tf.keras.layers.Dense(
                 1,
-                activation='sigmoid'
+                activation='sigmoid',
             )
         )
     )
