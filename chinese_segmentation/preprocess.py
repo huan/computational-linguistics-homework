@@ -33,7 +33,7 @@ def preprocess(line_list):
             line_text = line_text + word_text
             line_tag = line_tag + word_tag
 
-            if word_text == '。' or len(line_text) + 5 >= MAX_LEN:
+            if word_text == '。' or len(line_text) + 10 >= MAX_LEN:
                 line_text_list.append(line_text.strip())
                 line_tag_list.append(line_tag.strip())
                 line_text = ''
